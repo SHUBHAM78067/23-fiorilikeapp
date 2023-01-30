@@ -1,0 +1,96 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:t="sap.ui.table" controllerName="com.emc.fin.ap.controller.View2" xmlns:u="sap.ui.unified">
+    <Page title="View 2" showNavButton="true" navButtonPress="onBack">
+        <content>
+            <ObjectHeader title="{name}" intro="{healthBenefit}" icon="{imageURL}" number="{price}" numberUnit="{currency}" />
+
+            <!-- <Button text="Back" press="onBack"></Button> -->
+            <IconTabBar>
+                <items>
+                    <IconTabFilter icon="sap-icon://warning" text="More Info">
+                        <f:SimpleForm>
+                            <f:content>
+                                <Label text="Fruit Name" />
+                                <Text text="{name}" />
+                                <Label text="Color" />
+                                <Text text="{color}" />
+                                <Label text="Price" />
+                                <Text text="{price} {currency}" />
+                                <Label text="Is Available?" />
+                                <Text text="{status}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://supplier" text="Suppliers">
+                        <Table id="idTable" visible="false" />
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://home" text="Cities">
+                        <Select id="idCty" items="{/cities}" change="onCityPress">
+                            <items>
+                                <core:Item key="{name}" text="{name}" />
+                            </items>
+                        </Select>
+                        <Select id="idPin" items="{/pincode}" change="onPinCodepress" enabled="false">
+                            <items>
+                                <core:Item key="{pincode}" text="{pincode}" />
+                            </items>
+                        </Select>
+                        <Select id="idPlant" items="{/pincode}" change="onPlant" enabled="false">
+                            <items>
+                                <core:Item key="{officeName}" text="{officeName}" />
+                            </items>
+                        </Select>
+                        <Button id="idBtn" text="progress" type="Accept" press="onProg" enabled="false"/>
+
+                        <Table id="idTable1" ariaLabelledBy="title">
+                            <columns>
+                                <Column width="11rem">
+                                    <Label text="city" />
+
+                                    <Text text="city" wrapping="false" />
+                                </Column>
+                            </columns>
+                            <columns>
+                                <Column width="11rem">
+                                    <Label text="Pin Code" />
+
+                                    <Text text="pincode" wrapping="false" />
+                                </Column>
+                            </columns>
+                            <columns>
+                                <Column width="11rem">
+                                    <Label text="Plant" />
+
+                                    <Text text="plant" wrapping="false" />
+                                </Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <ObjectIdentifier title="{/cities}"  text="{name/}" class="sapMTableContentMargin" />
+                                        <Text text="{name}" />
+                                    </cells>
+                                      <cells>
+                                        <ObjectIdentifier title="{/cities}"  text="{name/}" class="sapMTableContentMargin" />
+                                        <Text text="{name}" />
+                                    </cells>
+                                      <cells>
+                                        <ObjectIdentifier title="{/cities}"  text="{name/}" class="sapMTableContentMargin" />
+                                        <Text text="{name}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button id="idSave" text="Save" type="Accept" press="onSave" enabled="false"/>
+                <Button id="idCancel" text="Cancel" type="Reject" press="onCancel" enabled="false" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
