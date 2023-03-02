@@ -69,7 +69,7 @@ sap.ui.define([
             });
             //var objname = new class({ param : v1, param : v2});
             //Step 3: Get Items of the list control and filter all items
-            this.getView().byId("idMyList").getBinding("items").filter(oFilter);
+            this.getView().byId("idList").getBinding("items").filter(oFilter);
         }
     });
 });
