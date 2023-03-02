@@ -39,7 +39,14 @@
                                 <core:Item key="{officeName}" text="{officeName}" />
                             </items>
                         </Select>
-                        <Button id="idBtn" text="progress" type="Accept" press="onProg" enabled="false"/>
+                        <!-- multi   -->
+                        <MultiComboBox showSelectAll="true"  	items="{/pincode}">
+                        <items>
+                                <core:Item key="{pincode}" text="{pincode}" />
+                            </items>
+                        </MultiComboBox>
+
+                        <Button id="idBtn" text="progress" type="Accept" press="onProg" enabled="false" />
 
                         <Table id="idTable1" ariaLabelledBy="title">
                             <columns>
@@ -67,15 +74,15 @@
                             <items>
                                 <ColumnListItem>
                                     <cells>
-                                        <ObjectIdentifier title="{/cities}"  text="{name/}" class="sapMTableContentMargin" />
+                                        <ObjectIdentifier title="{/cities}" text="{name/}" class="sapMTableContentMargin" />
                                         <Text text="{name}" />
                                     </cells>
-                                      <cells>
-                                        <ObjectIdentifier title="{/cities}"  text="{name/}" class="sapMTableContentMargin" />
+                                    <cells>
+                                        <ObjectIdentifier title="{/cities}" text="{name/}" class="sapMTableContentMargin" />
                                         <Text text="{name}" />
                                     </cells>
-                                      <cells>
-                                        <ObjectIdentifier title="{/cities}"  text="{name/}" class="sapMTableContentMargin" />
+                                    <cells>
+                                        <ObjectIdentifier title="{/cities}" text="{name/}" class="sapMTableContentMargin" />
                                         <Text text="{name}" />
                                     </cells>
                                 </ColumnListItem>
@@ -88,7 +95,7 @@
         <footer>
             <Toolbar>
                 <ToolbarSpacer />
-                <Button id="idSave" text="Save" type="Accept" press="onSave" enabled="false"/>
+                <Button id="idSave" text="Save" type="Accept" press="onSave" enabled="false" />
                 <Button id="idCancel" text="Cancel" type="Reject" press="onCancel" enabled="false" />
             </Toolbar>
         </footer>
